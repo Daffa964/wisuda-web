@@ -28,7 +28,6 @@ export function SafeImage({
   sizes,
 }: SafeImageProps) {
   const [hasError, setHasError] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
 
   if (!src || src.trim() === "" || hasError) {
     return (
@@ -64,30 +63,17 @@ export function SafeImage({
 
   return (
     <div className={`relative overflow-hidden ${fill ? "w-full h-full" : ""}`}>
-      {isLoading && (
-        <div
-          className={`absolute inset-0 bg-[#F4DDE1]/30 animate-pulse flex items-center justify-center z-0`}
-        >
-          <Sparkles className="w-5 h-5 text-[#C88E9A] animate-spin" />
-        </div>
-      )}
       <Image
         src={src}
         alt={alt}
         unoptimized
-        className={`transition-opacity duration-500 ${
-          isLoading ? "opacity-0" : "opacity-100"
-        } ${className}`}
+        className={className}
         fill={fill}
         width={!fill ? width || 600 : undefined}
         height={!fill ? height || 600 : undefined}
         priority={priority}
         sizes={sizes || (fill ? "(max-width: 768px) 100vw, 50vw" : undefined)}
-        onLoad={() => setIsLoading(false)}
-        onError={() => {
-          setHasError(true);
-          setIsLoading(false);
-        }}
+        onError={() => setHasError(true)}
       />
     </div>
   );
