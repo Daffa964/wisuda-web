@@ -81,7 +81,7 @@ export const siteContent: SiteContent = {
       },
       {
         id: "step-2",
-        period: "17 Februari 2024",
+        period: "12 Februari 2024",
         title: "Dinamika & Pendewasaan (DPM & Promosi Model)",
         description:
           "Aktif di DPM, kepanitiaan, hingga menjadi perwakilan promosi model UMK. Kamu membuktikan diri sebagai perempuan bertalenta dan berprestasi.",
