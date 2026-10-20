@@ -1,26 +1,99 @@
 @import "tailwindcss";
 
+@theme {
+  --color-ivory: #FFF9F3;
+  --color-ivory-light: #FFFCF9;
+  --color-blush: #F4DDE1;
+  --color-blush-light: #FBF0F2;
+  --color-rose: #C88E9A;
+  --color-rose-dark: #A26B76;
+  --color-burgundy: #702F42;
+  --color-burgundy-dark: #501E2E;
+  --color-warm-brown: #5B463E;
+  --color-muted-gold: #C6A56B;
+  --color-muted-gold-light: #DFCA9B;
+
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+  --font-script: var(--font-caveat), cursive, sans-serif;
+}
+
+/* Base styling */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-playfair: 'Playfair Display', serif;
+  --font-jakarta: 'Plus Jakarta Sans', sans-serif;
+  --font-caveat: 'Caveat', cursive;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Custom Paper & Scrapbook effects */
+.paper-texture {
+  background-color: #FFF9F3;
+  background-image: 
+    radial-gradient(#C88E9A 0.4px, transparent 0.4px),
+    radial-gradient(#C6A56B 0.3px, #FFF9F3 0.3px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+
+.scrapbook-tape {
+  position: relative;
+}
+.scrapbook-tape::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 90px;
+  height: 24px;
+  background-color: rgba(244, 221, 225, 0.75);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-left: 2px dashed rgba(200, 142, 154, 0.4);
+  border-right: 2px dashed rgba(200, 142, 154, 0.4);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.polaroid-card {
+  background: #ffffff;
+  padding: 12px 12px 36px 12px;
+  box-shadow: 0 10px 25px -5px rgba(91, 70, 62, 0.12), 0 8px 10px -6px rgba(91, 70, 62, 0.08);
+  border: 1px solid rgba(200, 142, 154, 0.15);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.polaroid-card:hover {
+  transform: translateY(-4px) rotate(0.5deg);
+  box-shadow: 0 20px 30px -10px rgba(112, 47, 66, 0.18);
+}
+
+/* Delicate floating petals keyframe */
+@keyframes floatSlow {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
