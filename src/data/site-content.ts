@@ -44,7 +44,7 @@ export const siteContent: SiteContent = {
     supportingText:
       "Halaman ini mungkin sederhana, tapi aku membuatnya khusus buat kamu. Aku ingin menyimpan sedikit cerita tentang perjuanganmu di sini, supaya suatu hari nanti, saat kamu melihatnya lagi, kamu bisa tersenyum dan bilang ke diri sendiri, “Ternyata aku bisa sampai sejauh ini, ya.”",
     ctaText: "Mulai Jelajahi Perjalananmu",
-    heroImage: "/images/hero/hero-portrait.jpg",
+    heroImage: "/images/hero/hero-naili-toga.jpg",
     heroImageAlt: "Foto Cantik Favoritku • Naili",
     photoDateNote: "Happy Graduation Day • 21 Oktober 2026",
   },
