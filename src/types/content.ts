@@ -4,6 +4,7 @@ export interface TimelineItem {
   title: string;
   description: string;
   photo?: string;
+  video?: string;
   caption?: string;
   tag?: string;
 }
@@ -153,5 +154,14 @@ export interface SiteContent {
     favoritePhotoCaption: string;
     ctaRestart: string;
     ctaGallery: string;
+  };
+
+  graduationVideo?: {
+    enabled: boolean;
+    badge: string;
+    title: string;
+    subtitle: string;
+    src: string;
+    caption: string;
   };
 }

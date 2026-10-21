@@ -58,8 +58,28 @@ export function JourneyTimeline() {
                     {item.description}
                   </p>
 
+                  {/* Optional Video Attachment if provided */}
+                  {item.video && (
+                    <div className="mt-4 pt-4 border-t border-[#C88E9A]/15">
+                      <div className="relative max-w-md overflow-hidden rounded-2xl bg-black/90 shadow-md border border-[#C88E9A]/30">
+                        <video
+                          src={item.video}
+                          controls
+                          playsInline
+                          preload="metadata"
+                          className="w-full max-h-[380px] object-contain rounded-2xl"
+                        />
+                      </div>
+                      {item.caption && (
+                        <p className="font-script text-base text-[#702F42]/90 mt-2 italic">
+                          “{item.caption}”
+                        </p>
+                      )}
+                    </div>
+                  )}
+
                   {/* Optional Photo Attachment if provided */}
-                  {item.photo && (
+                  {item.photo && !item.video && (
                     <div className="mt-4 pt-4 border-t border-[#C88E9A]/15">
                       <div className="relative aspect-[16/9] w-full max-w-md overflow-hidden rounded-xl bg-[#F4DDE1]/20">
                         <SafeImage

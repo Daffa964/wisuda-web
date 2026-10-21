@@ -124,10 +124,11 @@ export const siteContent: SiteContent = {
         period: "Hari Ini • 21 Oktober 2026",
         title: "Hari Wisuda: Mahkota Perjuangan (The Finish Line)",
         description:
-          "Hari ini adalah pembuktian atas semua kerja kerasmu. Toga kebanggaan itu resmi kamu kenakan hari ini, dan aku nggak sabar melihat senyum paling bahagiamu!",
+          "Hari ini adalah pembuktian atas semua kerja kerasmu. Toga kebanggaan itu resmi kamu kenakan hari ini, dan ini momen membanggakan saat kamu melangkah di panggung wisuda!",
         tag: "Official Graduate",
+        video: "/videos/graduation-stage.mp4",
         photo: "",
-        caption: "Nggak sabar foto toga bareng kamu hari ini! 🎓❤️",
+        caption: "Detik-detik saat kamu melangkah di panggung wisuda • Proud of you, Naili, S.H.! 🎓❤️",
       },
     ],
   },
