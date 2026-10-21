@@ -104,7 +104,7 @@ export function MemoryGallery() {
                       photo.category === "graduation" ? "graduation" : "general"
                     }
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   />
 
                   {/* Hover Overlay with Zoom Icon */}
