@@ -76,7 +76,7 @@ export function MemoryGallery() {
         </div>
 
         {/* Photo Grid / Scrapbook Polaroid Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-start">
           {filteredPhotos.map((photo, index) => {
             const isLandscape = photo.aspect === "landscape";
             const isPortrait = photo.aspect === "portrait";
@@ -85,7 +85,7 @@ export function MemoryGallery() {
               <div
                 key={photo.id}
                 onClick={() => setSelectedPhotoIndex(index)}
-                className="group cursor-pointer polaroid-card rounded-lg flex flex-col justify-between"
+                className="group cursor-pointer polaroid-card rounded-lg flex flex-col"
               >
                 {/* Image Container */}
                 <div
